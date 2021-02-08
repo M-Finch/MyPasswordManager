@@ -1,5 +1,6 @@
 from tkinter import *
-
+import string
+import secrets
 
 
 class App:
@@ -41,12 +42,18 @@ class App:
 
 	def create_left_widget(self):
 
-		self.entry_password = Text(self.frame, bd=0,width=50, height=1, font=("Helvetica", 20), pady=15, fg=self.color)
+		self.entry_password = Entry(self.frame, bd=0,width=37,font=("Helvetica", 20), fg=self.color)
 		self.entry_password .grid(row=2, column=1, columnspan=2,pady=10)
 
-		self.button_generate = Button(self.frame, text="Générer un mot de passe", bd=0, fg=self.color, font=("Helvetica", 15,"bold"), width=50,pady=20)
+		self.button_generate = Button(self.frame, text="Générer un mot de passe", bd=0, fg=self.color, font=("Helvetica", 15,"bold"), width=50,pady=20, command=self.generate_password)
 		self.button_generate.grid(row=3, column=1, columnspan=2, pady=10)
 		#self.entry.insert(INSERT,"salut ça va ")
+
+	def generate_password(self):
+		alphabet = string.ascii_letters + string.digits + '!"#&%$/=?()*+|{}@[]'
+		password = ''.join(secrets.choice(alphabet) for i in range(21))
+		self.entry_password.delete(0, END)
+		self.entry_password.insert(INSERT, password)
 
 myapp = App()
 myapp.root.mainloop()
