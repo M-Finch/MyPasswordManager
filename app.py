@@ -15,7 +15,7 @@ class App:
 
 		#init tkinter and config
 		self.root = Tk()
-		self.root.title('Générateur de password')
+		self.root.title('Gestionnaire de mot de passe')
 		self.root.geometry("1080x720")
 		self.root.minsize(720, 480)
 		self.root.config(background=self.bg)
