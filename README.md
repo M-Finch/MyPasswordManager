@@ -18,3 +18,28 @@ You just need to have Python3 installed on your environment.
 
 
 
+## Getting Started 
+### Installation
+
+
+```
+
+git clone https://github.com/M-Finch/MyPasswordManager.git
+cd MyPasswordManager/
+
+```
+
+### Run
+
+```
+
+python3 app.py
+
+```
+
+
+## Ideas for improvement
+
+1. Registration of username and password and login url -> bdd sql
+2. Edit 
+3. User account
